@@ -1,6 +1,8 @@
 <h1>Articles Tagged with <%= @tag.name %></h1>
+<% if logged_in? %>
 <%= link_to "Delete '#{@tag.name}' tag", tag_path(@tag), method: :delete,
   data: {confirm: "Really delete the tag?"} %>
+<% end %>
 <br><br>
 
 <ul id="articles">

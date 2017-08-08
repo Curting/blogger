@@ -10,4 +10,6 @@
 </ul>
 
 <br>
-<%= link_to "Create a New Article", new_article_path, class: "article_title" %>
+<% if logged_in? %>
+  <%= link_to "Create a New Article", new_article_path, class: "article_title" %>
+<% end %>

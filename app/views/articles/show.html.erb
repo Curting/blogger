@@ -14,10 +14,12 @@
 
 <p><%= @article.body %></p>
 
-<br>
-<%= link_to "Edit", edit_article_path(@article) %> | 
-<%= link_to "Delete", article_path(@article), method: :delete,
-  data: {confirm: "Really delete the article?"} %>
+<% if logged_in? %>
+  <br>
+  <%= link_to "Edit", edit_article_path(@article) %> | 
+  <%= link_to "Delete", article_path(@article), method: :delete,
+    data: {confirm: "Really delete the article?"} %>
+<% end %>
 
 <br><br>
 <h3>Comments (<%= @article.comments.size %>)</h3>
